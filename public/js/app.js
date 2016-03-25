@@ -7,6 +7,8 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     id: 'mapbox.light',
     accessToken: 'pk.eyJ1IjoiaHlwZXJraW5kIiwiYSI6ImNpbTV4cTNkeDAxd3h1Mm00cmVlM242dzgifQ.z3qbberA-XEQkuZQdbDMVA'
 }).addTo(map);
+newMarkerGroup = L.LayerGroup();
+map.on('click', addMarker);
 
 //accesses location services to find spot on the map
 function onLocationFound(e) {
@@ -26,4 +28,13 @@ function onLocationError(e) {
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
 
-map.locate({setView: true, maxZoom: 16});
+map.locate({
+  setView: true, 
+  maxZoom: 16,
+});
+
+
+function addMarker(e){
+    // Add marker to map at click location; add popup window
+    var newMarker = new L.marker(e.latlng).addTo(map);
+}
