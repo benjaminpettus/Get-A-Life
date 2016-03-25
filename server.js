@@ -8,7 +8,8 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended:false}));
 //CHECK: need bodyParser.json also?
 
-app.get('/', function(req, res) {
+app.get('/maps', function(req, res) {
+  console.log('Im getting');
   res.send('I\'m getting');
 });
 
