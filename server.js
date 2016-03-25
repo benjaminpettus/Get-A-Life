@@ -8,9 +8,6 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended:false}));
 //CHECK: need bodyParser.json also?
 
-// app.set('views', 'views');
-app.set('view engine', 'html');
-
 app.get('/login', function (req, res){
   res.redirect('/templates/login.html');
 });
