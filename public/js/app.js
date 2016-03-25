@@ -48,7 +48,7 @@ function addMarker(e){
   // console.log(newMarker);
   newMarker.on('dragend', function(event){
     var changePos = event.target.getLatLng();
-    // console.log(changePos);
+    console.log(changePos);
   });
   var popup = 
     L.popup({
@@ -60,7 +60,7 @@ function addMarker(e){
       offset: L.point(1000, 500)
     })
     .setLatLng(e.latlng)
-    .setContent('<p>this is a marker</p>');
+    .setContent('<h1>Party at MIC</h1> <h2>2800 Woodlawn Dr #100, Honolulu, HI 96822</h2> <h3>Date: March 31, 2016 Time: 7:00pm - 10:00pm</h3><p>this is a an event at Manoa Innovation Center</p>');
     console.log(map);
   newMarker.bindPopup(popup);
   
