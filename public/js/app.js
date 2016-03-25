@@ -36,5 +36,13 @@ map.locate({
 
 function addMarker(e){
     // Add marker to map at click location; add popup window
-    var newMarker = new L.marker(e.latlng).addTo(map);
+    var newMarker = 
+    new L.marker(e.latlng,{
+      clickable: true,
+      draggable: true,
+      keyboard: true,
+      riseOnHover: true,
+      riseOffset: 100
+      }).addTo(map);
+    console.log(newMarker);
 }
