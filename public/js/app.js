@@ -45,4 +45,10 @@ function addMarker(e){
       riseOffset: 100
       }).addTo(map);
     console.log(newMarker);
+newMarker.on('dragend', function(ev){
+  var changePos = ev.target.getLatLng();
+  console.log(changePos);
+  this.bindPopup(changePos.toString()).openPopup();
+});
 }
+
