@@ -10,10 +10,11 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 newMarkerGroup = L.LayerGroup();
 map.on('click', addMarker);
 
+
 //accesses location services to find spot on the map
 function onLocationFound(e) {
     var radius = e.accuracy / 2;
-
+    console.log(e.latlng);
     L.marker(e.latlng).addTo(map)
         .bindPopup("You are within " + radius + " meters from this point").openPopup();
 
@@ -33,22 +34,37 @@ map.locate({
   maxZoom: 16,
 });
 
+// var marker = this.addMarker();
 
 function addMarker(e){
     // Add marker to map at click location; add popup window
-    var newMarker = 
-    new L.marker(e.latlng,{
-      clickable: true,
-      draggable: true,
-      keyboard: true,
-      riseOnHover: true,
-      riseOffset: 100
-      }).addTo(map);
-    console.log(newMarker);
-newMarker.on('dragend', function(ev){
-  var changePos = ev.target.getLatLng();
-  console.log(changePos);
-  this.bindPopup(changePos.toString()).openPopup();
-});
+  var newMarker = 
+  new L.marker(e.latlng,{
+    clickable: true,
+    draggable: true,
+    riseOnHover: true,
+    riseOffset: 100
+    }).addTo(map);
+  // console.log(newMarker);
+  newMarker.on('dragend', function(event){
+    var changePos = event.target.getLatLng();
+    // console.log(changePos);
+  });
+  var popup = 
+    L.popup({
+      maxWidth: 300,
+      minWidth: 200, 
+      maxHeight: 400,
+      autoPan: true,
+      closeButton: true,
+      offset: L.point(1000, 500)
+    })
+    .setLatLng(e.latlng)
+    .setContent('<p>this is a marker</p>');
+    console.log(map);
+  newMarker.bindPopup(popup);
+  
 }
+
+
 
