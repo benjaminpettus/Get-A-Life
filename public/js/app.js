@@ -14,13 +14,14 @@ map.on('click', addMarker);
 
 
 //accesses location services to find spot on the map
+//"you are here"
 function onLocationFound(e) {
     var radius = e.accuracy / 2;
     console.log(e.latlng);
-    L.marker(e.latlng).addTo(map)
-        .bindPopup("You are within " + radius + " meters from this point").openPopup();
-
-    L.circle(e.latlng, radius).addTo(map);
+    // L.marker(e.latlng).addTo(map)
+        // .bindPopup("You are within " + radius + " meters from this point").openPopup();
+    L.circle(e.latlng, radius).addTo(map)
+        .bindPopup("Your Location").openPopup();
 }
 
 
