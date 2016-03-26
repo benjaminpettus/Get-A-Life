@@ -36,7 +36,6 @@ map.locate({
   maxZoom: 16,
 });
 
-// var marker = this.addMarker();
 
 function addMarker(e){
     // Add marker to map at click location; add popup window
@@ -62,7 +61,16 @@ function addMarker(e){
       offset: L.point(1000, 500)
     })
     .setLatLng(e.latlng)
-    .setContent('<h1>Party at MIC</h1> <h2>2800 Woodlawn Dr #100, Honolulu, HI 96822</h2> <h3>Date: March 31, 2016 Time: 7:00pm - 10:00pm</h3><p>this is a an event at Manoa Innovation Center</p> <button>Delete</button>');
+    .setContent('<h2>Add Event</h2>' + 
+                '<form>' +
+                  '<input type="text" name="title" placeholder="Title">' +
+                  '<input type="text" name="location" placeholder="Location">' +
+                  '<input type="text" name="date" placeholder="Date">' +
+                  '<input type="text" name="time" placeholder="Time">' +
+                  '<input type="text" name="description" placeholder="Event Description">' +
+                '</form>' +
+                '<button>Delete</button>' +
+                '<button action="index" method="POST">ADD</button>');
     console.log(map);
   newMarker.bindPopup(popup);
   
