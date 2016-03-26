@@ -1,6 +1,8 @@
 var express = require('express');
 var path = require('path');
 var mongoose = require('mongoose');
+var morgan = require('morgan');
+var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
 
 mongoose.connect('mongodb://localhost/Get_A_Life');
