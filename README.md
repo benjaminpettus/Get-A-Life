@@ -3,7 +3,7 @@
 # waffle.io link:
 https://waffle.io/Hyperkind/Get-A-Life
 
-# Seeders are available for everyone to generate mock data
+# Seeders are available to generate mock data
 /seeds/event-mock-seed.js
 
 # To generate mock data to be used:
