@@ -4,7 +4,7 @@ var map = L.map('mapid');
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18,
-    id: 'mapbox.light',
+    id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoiaHlwZXJraW5kIiwiYSI6ImNpbTV4cTNkeDAxd3h1Mm00cmVlM242dzgifQ.z3qbberA-XEQkuZQdbDMVA',
     continuousWorld: false, 
     noWrap: true
@@ -37,6 +37,9 @@ map.locate({
   maxZoom: 16,
 });
 
+//home button
+
+
 
 function addMarker(e){
     // Add marker to map at click location; add popup window
@@ -47,7 +50,7 @@ function addMarker(e){
     riseOnHover: true,
     riseOffset: 100
     }).addTo(map);
-  // console.log(newMarker);
+  console.log(newMarker);
   newMarker.on('dragend', function(event){
     var changePos = event.target.getLatLng();
     console.log(changePos);
@@ -72,10 +75,10 @@ function addMarker(e){
                 '</form>' +
                 '<button>Delete</button>' +
                 '<button action="index" method="POST">ADD</button>');
-    console.log(map);
   newMarker.bindPopup(popup);
   
 }
+
 
 
 
