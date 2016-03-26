@@ -34,8 +34,11 @@ app.set('views', 'views');
 app.set('view engine', 'jade');
 
 app.get('/events', function(req, res) {
-  return Event.findAll({}).then(function(events){
-    res.render('index');
+  Event.find({}, function(err, events){
+    if(err){
+      res.send("error error");
+    }
+    res.json(events);
   });
 });
 
