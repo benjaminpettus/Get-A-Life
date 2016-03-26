@@ -2,7 +2,7 @@
   "name": "get-a-life",
   "version": "1.0.0",
   "description": "waffle.io link: https://waffle.io/Hyperkind/Get-A-Life",
-  "main": "server.js",
+  "main": "server/server.js",
   "dependencies": {
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
@@ -19,7 +19,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
