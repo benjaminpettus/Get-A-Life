@@ -5,7 +5,9 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18,
     id: 'mapbox.light',
-    accessToken: 'pk.eyJ1IjoiaHlwZXJraW5kIiwiYSI6ImNpbTV4cTNkeDAxd3h1Mm00cmVlM242dzgifQ.z3qbberA-XEQkuZQdbDMVA'
+    accessToken: 'pk.eyJ1IjoiaHlwZXJraW5kIiwiYSI6ImNpbTV4cTNkeDAxd3h1Mm00cmVlM242dzgifQ.z3qbberA-XEQkuZQdbDMVA',
+    continuousWorld: false, 
+    noWrap: true
 }).addTo(map);
 newMarkerGroup = L.LayerGroup();
 map.on('click', addMarker);
@@ -60,7 +62,7 @@ function addMarker(e){
       offset: L.point(1000, 500)
     })
     .setLatLng(e.latlng)
-    .setContent('<h1>Party at MIC</h1> <h2>2800 Woodlawn Dr #100, Honolulu, HI 96822</h2> <h3>Date: March 31, 2016 Time: 7:00pm - 10:00pm</h3><p>this is a an event at Manoa Innovation Center</p>');
+    .setContent('<h1>Party at MIC</h1> <h2>2800 Woodlawn Dr #100, Honolulu, HI 96822</h2> <h3>Date: March 31, 2016 Time: 7:00pm - 10:00pm</h3><p>this is a an event at Manoa Innovation Center</p> <button>Delete</button>');
     console.log(map);
   newMarker.bindPopup(popup);
   
