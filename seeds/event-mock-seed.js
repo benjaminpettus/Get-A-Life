@@ -51,4 +51,3 @@ function mockPosts(num) {
   }
   return result;
 }
-

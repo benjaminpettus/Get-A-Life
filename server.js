@@ -24,6 +24,26 @@ var userSchema = mongoose.Schema({
 
 var User = mongoose.model('User', userSchema);
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/Get_A_Life');
+
+var eventSchema = mongoose.Schema({
+  title: String,
+  created_by: String,
+  description: String,
+  latitude: Number,
+  longitude: Number,
+  start_time: Date,
+  posts: Array
+});
+var Event = mongoose.model('Event', eventSchema);
+
+var userSchema = mongoose.Schema({
+  username: String,
+  password: String,
+});
+var User = mongoose.model('User', userSchema);
+
 var app = express();
 
 app.use(bodyParser.urlencoded({extended:false}));
