@@ -1,3 +1,6 @@
+angular.module('app', ['ngRoute', 'nemLogging', 'ui-leaflet']);
+
+var app = angular.module('app');
 
 var map = L.map('mapid');
 
@@ -38,7 +41,7 @@ map.on('locationerror', onLocationError);
 
 
 map.locate({
-  setView: true, 
+  setView: true,
   maxZoom: 16,
 });
 
@@ -59,7 +62,7 @@ L.control.locate({
 
     // Add marker to map at click location; add popup window
 function addMarker(e){
-  var newMarker = 
+  var newMarker =
   new L.marker(e.latlng,{
     clickable: true,
     draggable: true,
@@ -71,10 +74,10 @@ function addMarker(e){
     var changePos = event.target.getLatLng();
     console.log(changePos);
   });
-  var popup = 
+  var popup =
     L.popup({
       maxWidth: 300,
-      minWidth: 200, 
+      minWidth: 200,
       maxHeight: 400,
       autoPan: true,
       closeButton: true,
@@ -93,7 +96,7 @@ function addMarker(e){
                 '<button action="removeMarker()">Delete</button>' +
                 '<button action="index" method="POST">ADD</button>');
   newMarker.bindPopup(popup);
-  
+
 }
 
 
