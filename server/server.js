@@ -30,11 +30,7 @@ var User = mongoose.model('User', userSchema);
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
-//CHECK: need bodyParser.json also?
 app.use(express.static(path.resolve(__dirname, '..','public')));
-
-// app.set('views','views');
-// app.set('view engine', 'jade');
 
 app.use(morgan('dev'));
 app.use(methodOverride('_method'));
@@ -48,10 +44,6 @@ app.get('/events', function(req, res) {
     res.json(events);
   });
 });
-
-// app.get('/login', function(req, res){
-//   res.redirect('/templates/login.html');
-// });
 
 app.post('/events', function(req, res){
   //TODO: ajax request POST for Ben's setContent
