@@ -4,7 +4,8 @@
   "description": "waffle.io link: https://waffle.io/Hyperkind/Get-A-Life",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "leaflet.locatecontrol": "^0.48.0"
   },
   "devDependencies": {},
   "scripts": {
