@@ -7,10 +7,12 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoiaHlwZXJraW5kIiwiYSI6ImNpbTV4cTNkeDAxd3h1Mm00cmVlM242dzgifQ.z3qbberA-XEQkuZQdbDMVA',
     continuousWorld: false, 
-    noWrap: true
+    noWrap: true,
+    trackResize: true,
+    closePopupOnClick: true
 }).addTo(map);
 newMarkerGroup = L.LayerGroup();
-map.on('click', addMarker);
+map.on('dblclick', addMarker);
 
 
     //accesses location services to find spot on the map
@@ -34,6 +36,7 @@ function onLocationError(e) {
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
 
+
 map.locate({
   setView: true, 
   maxZoom: 16,
@@ -41,8 +44,16 @@ map.locate({
 
     //home button
 L.control.locate({
-  position: 'bottomleft'
+  position: 'topright',
+  drawCircle: true,
+  follow: true,
+  setView: true, 
+  remainActive: false
+  // stopFollwingOnDrag: false //DEPRICATED?
 }).addTo(map);
+
+
+
 
 
 
