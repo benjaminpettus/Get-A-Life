@@ -90,11 +90,12 @@ function addMarker(e){
                   '<input type="file" name="img" multiple>' +
                   '<textarea name="description" wrap="physical" width="200"></textarea>' +
                 '</form>' +
-                '<button>Delete</button>' +
+                '<button action="removeMarker()">Delete</button>' +
                 '<button action="index" method="POST">ADD</button>');
   newMarker.bindPopup(popup);
   
 }
+
 
 
 
