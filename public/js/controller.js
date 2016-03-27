@@ -21,11 +21,11 @@ app.controller('MapController', [
    });
   $scope.markers = new Array();
   $scope.$on("leafletDirectiveMap.click", function(event, args) {
-    var leafEvent = args.leafletEvent;
-
+    var markerData = args.leafletEvent;
+    console.log(markerData);
     $scope.markers.push({
-      lat: leafEvent.latlng.lat,
-      lng: leafEvent.latlng.lng,
+      lat: markerData.latlng.lat,
+      lng: markerData.latlng.lng,
       message: "New Marker"
     });
   });
