@@ -71,7 +71,8 @@ function addMarker(e){
                   '<input type="text" name="location" placeholder="Location">' +
                   '<input type="text" name="date" placeholder="Date">' +
                   '<input type="text" name="time" placeholder="Time">' +
-                  '<input type="text" name="description" placeholder="Event Description">' +
+                  '<input type="file" name="img" multiple>' +
+                  '<textarea name="description" wrap="physical" width="200"></textarea>' +
                 '</form>' +
                 '<button>Delete</button>' +
                 '<button action="index" method="POST">ADD</button>');
