@@ -29,26 +29,24 @@ var userSchema = mongoose.Schema({
 var User = mongoose.model('User', userSchema);
 
 app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
 //CHECK: need bodyParser.json also?
-app.use(express.static(path.resolve(__dirname, 'public')));
+app.use(express.static(path.resolve(__dirname, '..','public')));
 
-app.set('views', 'views');
-app.set('view engine', 'jade');
+// app.set('views','views');
+// app.set('view engine', 'jade');
 
 app.use(morgan('dev'));
 app.use(methodOverride('_method'));
 
 app.get('/events', function(req, res) {
   Event.find({}, function(err, events){
+    console.log('events', events);
     if(err){
       res.send("error error");
     }
     res.json(events);
   });
-});
-
-app.get('/newEvent', function(req, res){
-  res.render('create-event');
 });
 
 // app.get('/login', function(req, res){
