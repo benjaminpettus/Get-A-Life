@@ -1,4 +1,4 @@
-angular.module('app', ['ngRoute', 'leaflet-directive']);
+angular.module('app', ['ngRoute', 'nemLogging', 'ui-leaflet']);
 
 var app = angular.module('app');
 

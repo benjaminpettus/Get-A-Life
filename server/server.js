@@ -30,6 +30,7 @@ var User = mongoose.model('User', userSchema);
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
+//need to get from server dir to public so '..'
 app.use(express.static(path.resolve(__dirname, '..','public')));
 
 app.use(morgan('dev'));
