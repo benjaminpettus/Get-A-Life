@@ -13,14 +13,16 @@ newMarkerGroup = L.LayerGroup();
 map.on('click', addMarker);
 
 
-//accesses location services to find spot on the map
-//"you are here"
+    //accesses location services to find spot on the map
+    //"you are here"
 function onLocationFound(e) {
-    var radius = e.accuracy / 2;
+    var radius = e.accuracy;
     console.log(e.latlng);
     // L.marker(e.latlng).addTo(map)
         // .bindPopup("You are within " + radius + " meters from this point").openPopup();
-    L.circle(e.latlng, radius).addTo(map)
+    L.circle(e.latlng, radius, {
+      color: 'red'
+      }).addTo(map)
         .bindPopup("Your Location").openPopup();
 }
 
@@ -37,12 +39,15 @@ map.locate({
   maxZoom: 16,
 });
 
-//home button
+    //home button
+L.control.locate({
+  position: 'bottomleft'
+}).addTo(map);
 
 
 
-function addMarker(e){
     // Add marker to map at click location; add popup window
+function addMarker(e){
   var newMarker = 
   new L.marker(e.latlng,{
     clickable: true,
